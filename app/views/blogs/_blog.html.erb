@@ -1,0 +1,21 @@
+<div class="row-blog">
+  <div class="col s12 m9">
+    <div class="card white darken-1">
+      <div class="card-content" >
+        <span class="card-title"><%= blog.title %></span>
+        <p><%= blog.text %></p>
+      </div>
+      <%if user_signed_in? && (current_user.id == blog.user_id) %>
+        <div class="card-action">
+          <%= link_to 'EDIT', "/blogs/#{blog.id}/edit", method: :get, class: "btn"%>
+          <%= link_to 'DELETE', "/blogs/#{blog.id}", method: :delete, class: "btn red darken-3", onclick: "clickEvent()" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+    function clickEvent() {
+        alert('削除しますか？');
+    }
+</script>

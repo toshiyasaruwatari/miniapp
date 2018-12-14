@@ -1,0 +1,15 @@
+<div class="row-1">
+  <div class="col s9">
+    <div class="row-2">
+      <div class="input-field col s9">
+        <%= form_for(@blog, :url => {:controller => :blogs, :action => :update}) do |f| %>
+          <%= f.label :タイトル %><br />
+          <%= f.text_field :title %><br />
+          <%= f.label :本文 %><br />
+          <%= f.text_field :text %><br />
+          <%= f.submit "更新", :class=>"btn" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
